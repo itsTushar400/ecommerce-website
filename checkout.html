@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shoply | Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav">
+  <h2>Shoply</h2>
+
+  <!-- HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="checkout.html" class="active">Checkout</a>
+  </nav>
+</header>
+
+<!-- ================= CHECKOUT ================= -->
+<section class="checkout">
+
+  <!-- LEFT -->
+  <div class="checkout-form">
+    <h2>Billing Details</h2>
+
+    <div class="form-group">
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email Address">
+    </div>
+
+    <div class="form-group">
+      <input type="text" placeholder="Phone Number">
+      <input type="text" placeholder="City">
+    </div>
+
+    <input type="text" placeholder="Full Address" class="full">
+
+    <!-- PAYMENT CARD -->
+    <div class="payment-card">
+      <h3>Payment Method</h3>
+
+      <label class="payment-option">
+        <input type="radio" name="pay" value="cod" checked>
+        Cash on Delivery
+      </label>
+
+      <label class="payment-option">
+        <input type="radio" name="pay" value="online">
+        UPI / Card
+      </label>
+
+      <!-- ONLINE PAYMENT FIELDS -->
+      <div class="online-fields" id="onlineFields">
+        <input type="text" placeholder="UPI ID (example@upi)">
+        <input type="text" placeholder="Card Number">
+        <div class="card-row">
+          <input type="text" placeholder="MM / YY">
+          <input type="text" placeholder="CVV">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="order-summary">
+    <h2>Your Order</h2>
+
+    <div class="item">
+      <span>Stylish T-Shirt</span>
+      <span>₹799</span>
+    </div>
+
+    <div class="item">
+      <span>Luxury Watch</span>
+      <span>₹2499</span>
+    </div>
+
+    <hr>
+
+    <div class="item total">
+      <span>Total</span>
+      <span>₹3298</span>
+    </div>
+
+    <button class="place-order" onclick="placeOrder()">Place Order</button>
+  </div>
+
+</section>
+
+<!-- ================= SUCCESS POPUP ================= -->
+<div class="success-popup" id="successPopup">
+  <div class="popup-card">
+    <h2>🎉 Order Placed!</h2>
+    <p>Your order has been placed successfully.</p>
+    <button onclick="closePopup()">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+/* HAMBURGER */
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+/* PAYMENT TOGGLE */
+const radios = document.querySelectorAll('input[name="pay"]');
+const onlineFields = document.getElementById("onlineFields");
+
+radios.forEach(radio => {
+  radio.addEventListener("change", () => {
+    if (radio.value === "online" && radio.checked) {
+      onlineFields.style.display = "grid";
+    } else {
+      onlineFields.style.display = "none";
+    }
+  });
+});
+
+/* PLACE ORDER */
+function placeOrder(){
+  document.getElementById("successPopup").classList.add("show");
+}
+
+function closePopup(){
+  document.getElementById("successPopup").classList.remove("show");
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

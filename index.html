@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shoply | All-in-One</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav">
+  <h2>Shoply</h2>
+
+  <!-- HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="navMenu">
+    <a href="index.html" class="active">Home</a>
+    <a href="product.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="cart.html">Cart 🛒</a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-container">
+
+    <div class="hero-left">
+      <h1>ONLINE<br><span>SHOPPING</span></h1>
+      <p>
+        Discover premium products with a smooth and modern shopping experience.
+      </p>
+      <button onclick="location.href='product.html'">Explore Now</button>
+    </div>
+
+    <div class="hero-right">
+      <img src="images/model.png" alt="Shopping model">
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section class="section">
+  <h3>Explore Popular Categories</h3>
+
+  <div class="categories">
+    <a href="product.html" class="cat">
+      <img src="images/sneakers.png">
+      <p>Sneakers</p>
+    </a>
+
+    <a href="product.html" class="cat">
+      <img src="images/watches.png">
+      <p>Watches</p>
+    </a>
+
+    <a href="product.html" class="cat">
+      <img src="images/bags.png">
+      <p>Bags</p>
+    </a>
+
+    <a href="product.html" class="cat">
+      <img src="images/shirt.png">
+      <p>Clothes</p>
+    </a>
+  </div>
+</section>
+
+<!-- ================= WHY SHOP WITH US ================= -->
+<section class="why-us">
+  <h2>Why Shop With Us</h2>
+
+  <div class="why-cards">
+    <div class="why-card">
+      <i class="fas fa-truck"></i>
+      <h4>Free Delivery</h4>
+      <p>On orders above ₹999</p>
+    </div>
+
+    <div class="why-card">
+      <i class="fas fa-lock"></i>
+      <h4>Secure Payments</h4>
+      <p>100% safe checkout</p>
+    </div>
+
+    <div class="why-card">
+      <i class="fas fa-star"></i>
+      <h4>Premium Quality</h4>
+      <p>Curated best products</p>
+    </div>
+
+    <div class="why-card">
+      <i class="fas fa-rotate-left"></i>
+      <h4>Easy Returns</h4>
+      <p>7 days return policy</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer-dark">
+  <div class="footer-dark-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>Shoply</h2>
+      <p>Your all-in-one shopping destination.</p>
+
+      <div class="footer-social-dark">
+        <a><i class="fab fa-instagram"></i></a>
+        <a><i class="fab fa-facebook-f"></i></a>
+        <a><i class="fab fa-x-twitter"></i></a>
+        <a><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- SHOP -->
+<div class="footer-links">
+  <h4>Shop</h4>
+  <a href="product.html">All Products</a>
+  <a href="#">New Arrivals</a>
+  <a href="#">Best Sellers</a>
+  <a href="#">Offers</a>
+</div>
+
+<!-- COMPANY -->
+<div class="footer-links">
+  <h4>Company</h4>
+  <a href="about.html">About Us</a>
+  <a href="#">Careers</a>
+  <a href="#">Blog</a>
+  <a href="#">Press</a>
+</div>
+
+<!-- SUPPORT -->
+<div class="footer-links">
+  <h4>Support</h4>
+  <a href="contact.html">Contact</a>
+  <a href="#">FAQs</a>
+  <a href="#">Shipping</a>
+  <a href="#">Returns</a>
+</div>
+
+
+    <!-- SUBSCRIBE -->
+    <div class="footer-subscribe">
+      <h4>Subscribe</h4>
+      <p>Get deals & updates in your inbox.</p>
+
+      <div class="subscribe-box">
+        <input type="email" placeholder="Email address">
+        <button>→</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-dark-bottom">
+    © 2026 Shoply by Tushar Chauhan. All rights reserved.
+  </div>
+</footer>
+
+<!-- ================= HAMBURGER JS ================= -->
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>

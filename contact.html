@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shoply | Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav">
+  <h2>Shoply</h2>
+  <!-- HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="cart.html">Cart 🛒</a>
+  </nav>
+</header>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section">
+
+  <!-- LEFT INFO -->
+  <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p>
+      Have questions, feedback, or need support?  
+      Our team is always here to help you.
+    </p>
+
+    <div class="info-item">
+      <i class="fas fa-location-dot"></i>
+      <span>New Delhi, India</span>
+    </div>
+
+    <div class="info-item">
+      <i class="fas fa-envelope"></i>
+      <span>support@shoply.com</span>
+    </div>
+
+    <div class="info-item">
+      <i class="fas fa-phone"></i>
+      <span>+91 98765 43210</span>
+    </div>
+
+    <!-- SOCIAL ICONS -->
+    <div class="contact-social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="contact-form">
+    <h2>Send a Message</h2>
+
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Your Name" required>
+      </div>
+
+      <div class="form-group">
+        <input type="email" placeholder="Your Email" required>
+      </div>
+
+      <div class="form-group">
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</section>
+
+<footer class="footer-dark">
+  <div class="footer-dark-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>Shoply</h2>
+      <p>Your all-in-one shopping destination.</p>
+
+      <div class="footer-social-dark">
+        <a><i class="fab fa-instagram"></i></a>
+        <a><i class="fab fa-facebook-f"></i></a>
+        <a><i class="fab fa-x-twitter"></i></a>
+        <a><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- SHOP -->
+<div class="footer-links">
+  <h4>Shop</h4>
+  <a href="product.html">All Products</a>
+  <a href="#">New Arrivals</a>
+  <a href="#">Best Sellers</a>
+  <a href="#">Offers</a>
+</div>
+
+<!-- COMPANY -->
+<div class="footer-links">
+  <h4>Company</h4>
+  <a href="about.html">About Us</a>
+  <a href="#">Careers</a>
+  <a href="#">Blog</a>
+  <a href="#">Press</a>
+</div>
+
+<!-- SUPPORT -->
+<div class="footer-links">
+  <h4>Support</h4>
+  <a href="contact.html">Contact</a>
+  <a href="#">FAQs</a>
+  <a href="#">Shipping</a>
+  <a href="#">Returns</a>
+</div>
+
+
+    <!-- SUBSCRIBE -->
+    <div class="footer-subscribe">
+      <h4>Subscribe</h4>
+      <p>Get deals & updates in your inbox.</p>
+
+      <div class="subscribe-box">
+        <input type="email" placeholder="Email address">
+        <button>→</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-dark-bottom">
+    © 2026 Shoply. All rights reserved.
+  </div>
+</footer>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.querySelector(".nav nav");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Optional: menu click pe close ho jaye (mobile UX)
+  document.querySelectorAll(".nav nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
+</script>
+
+
+</body>
+</html>

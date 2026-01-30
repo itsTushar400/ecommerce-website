@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shoply | Products</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="product.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav">
+  <h2>Shoply</h2>
+
+  <!-- HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="product.html" class="active">Products</a>
+    <a href="about.html">About</a>
+    <a href="cart.html">Cart 🛒</a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="products-hero">
+  <h1>Our Products</h1>
+  <p>Discover premium products curated just for you</p>
+</section>
+
+<!-- ================= FILTER ================= -->
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="clothes">Clothes</button>
+  <button class="filter-btn" data-filter="watches">Watches</button>
+  <button class="filter-btn" data-filter="electronics">Electronics</button>
+</div>
+
+<!-- ================= PRODUCTS GRID ================= -->
+<section class="products">
+
+  <div class="product-card" data-category="clothes">
+    <img src="images/tshirt.png">
+    <h4>Stylish T-Shirt</h4>
+    <p>Comfortable cotton wear</p>
+    <div class="price">₹799</div>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="product-card" data-category="watches">
+    <img src="images/watch.png">
+    <h4>Luxury Watch</h4>
+    <p>Premium leather strap</p>
+    <div class="price">₹2,499</div>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="product-card" data-category="clothes">
+    <img src="images/shopping-bag.png">
+    <h4>Leather Bag</h4>
+    <p>Perfect for daily use</p>
+    <div class="price">₹1,999</div>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="product-card" data-category="electronics">
+    <img src="images/headphones.png">
+    <h4>Headphones</h4>
+    <p>Noise cancellation</p>
+    <div class="price">₹3,299</div>
+    <button>Add to Cart</button>
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer-dark">
+  <div class="footer-dark-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>Shoply</h2>
+      <p>Your all-in-one shopping destination.</p>
+
+      <div class="footer-social-dark">
+        <a><i class="fab fa-instagram"></i></a>
+        <a><i class="fab fa-facebook-f"></i></a>
+        <a><i class="fab fa-x-twitter"></i></a>
+        <a><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- SHOP -->
+<div class="footer-links">
+  <h4>Shop</h4>
+  <a href="product.html">All Products</a>
+  <a href="#">New Arrivals</a>
+  <a href="#">Best Sellers</a>
+  <a href="#">Offers</a>
+</div>
+
+<!-- COMPANY -->
+<div class="footer-links">
+  <h4>Company</h4>
+  <a href="about.html">About Us</a>
+  <a href="#">Careers</a>
+  <a href="#">Blog</a>
+  <a href="#">Press</a>
+</div>
+
+<!-- SUPPORT -->
+<div class="footer-links">
+  <h4>Support</h4>
+  <a href="contact.html">Contact</a>
+  <a href="#">FAQs</a>
+  <a href="#">Shipping</a>
+  <a href="#">Returns</a>
+</div>
+
+
+    <!-- SUBSCRIBE -->
+    <div class="footer-subscribe">
+      <h4>Subscribe</h4>
+      <p>Get deals & updates in your inbox.</p>
+
+      <div class="subscribe-box">
+        <input type="email" placeholder="Email address">
+        <button>→</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-dark-bottom">
+    © 2026 Shoply. All rights reserved.
+  </div>
+</footer>
+
+
+<!-- ================= JS ================= -->
+<script>
+/* FILTER */
+const filterBtns = document.querySelectorAll(".filter-btn");
+const products = document.querySelectorAll(".product-card");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+
+    products.forEach(product => {
+      const category = product.dataset.category;
+      product.style.display =
+        filter === "all" || filter === category ? "block" : "none";
+    });
+
+  });
+});
+
+/* HAMBURGER */
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>
